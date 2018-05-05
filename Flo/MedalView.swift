@@ -19,7 +19,6 @@ class MedalView: UIImageView {
         UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
         let context = UIGraphicsGetCurrentContext()!
         
-        
         //Gold colors
         let darkGoldColor = UIColor(red: 0.6, green: 0.5, blue: 0.15, alpha: 1.0)
         let midGoldColor = UIColor(red: 0.86, green: 0.73, blue: 0.3, alpha: 1.0)
@@ -103,7 +102,7 @@ class MedalView: UIImageView {
     }
     
     func showMedal(show:Bool) {
+        
         image = show == true ? medalImage : nil
     }
-    
 }

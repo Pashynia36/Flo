@@ -203,16 +203,25 @@
                                     <constraint firstAttribute="width" constant="300" id="sgV-rO-1Cf"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GdH-bP-Ebt">
+                                <rect key="frame" x="16" y="518" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="registerLocalWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rbq-Da-vlw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="GdH-bP-Ebt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7r9-9j-p3p"/>
                             <constraint firstItem="Jwm-z9-qSk" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="100" id="AzM-bF-ORo"/>
                             <constraint firstItem="UdE-Ew-mqE" firstAttribute="top" secondItem="Jwm-z9-qSk" secondAttribute="bottom" constant="20" id="LTY-cK-hAP"/>
                             <constraint firstItem="Jwm-z9-qSk" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Yjj-U4-GoH"/>
                             <constraint firstItem="0bM-J0-LPc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="b9v-tN-olb"/>
                             <constraint firstItem="Jwm-z9-qSk" firstAttribute="top" secondItem="0bM-J0-LPc" secondAttribute="bottom" constant="8" id="dSA-lr-z0m"/>
                             <constraint firstItem="UdE-Ew-mqE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gtD-si-tnR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GdH-bP-Ebt" secondAttribute="bottom" constant="20" id="iLV-Jh-g3g"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <userDefinedRuntimeAttributes>

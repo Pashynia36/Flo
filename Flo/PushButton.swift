@@ -19,10 +19,12 @@ class PushButton: UIButton {
     }
     
     private var halfWidth: CGFloat {
+        
         return bounds.width / 2
     }
     
     private var halfHeight: CGFloat {
+        
         return bounds.height / 2
     }
     
@@ -54,6 +56,4 @@ class PushButton: UIButton {
         UIColor.white.setStroke()
         plusPath.stroke()
     }
-    
-    
 }

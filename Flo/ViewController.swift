@@ -7,25 +7,25 @@
 //
 
 import UIKit
+import UserNotifications
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var medalView: MedalView!
-    
     @IBOutlet weak var counterView: CounterView!
     @IBOutlet weak var counterLabel: UILabel!
-    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var graphView: GraphView!
-    var isGraphViewShowing = false
-    
     @IBOutlet weak var averageWaterDrunk: UILabel!
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var stackView: UIStackView!
+    
+    var isGraphViewShowing = false
 
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow, error in })
         counterLabel.text = String(counterView.counter)
         setupGraphDisplay()
         checkTotal()
@@ -81,6 +81,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func counterViewTap(_ gesture: UITapGestureRecognizer?) {
+        
         if isGraphViewShowing {
             UIView.transition(from: graphView, to: counterView, duration: 1.0, options: [.transitionFlipFromLeft, .showHideTransitionViews], completion: nil)
         } else {
@@ -89,5 +90,18 @@ class ViewController: UIViewController {
         isGraphViewShowing = !isGraphViewShowing
     }
 
+    @IBAction func registerLocal(sender: AnyObject) {
+        
+        let content = UNMutableNotificationContent()
+        content.title = "Flo"
+        content.subtitle = "Advice"
+        content.body = "Don't forget to drink up to 8 glasses of water daily."
+        content.badge = 1
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
+        let request = UNNotificationRequest(identifier: "timerDone", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+    }
 }
 
